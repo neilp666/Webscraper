@@ -15,3 +15,5 @@ gem 'nokogiri'
 
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
+
+gem 'bootstrap-sass', '~> 3.3.5'
