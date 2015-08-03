@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
+require 'net/http'
 
 
 #Store URL to be scraped
@@ -13,7 +14,7 @@ https.use_ssl = true
 
 # we need to define a Post object and send the postcode to search
 req = Net::HTTP::Post.new(uri.path)
-req.set_form_data('postcode1' => 'NW1W 9BE')
+req.set_form_data('postcode1' => 'RG1 8DB')
 
 # do the post
 result = https.request(req)
