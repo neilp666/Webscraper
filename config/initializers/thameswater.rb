@@ -21,3 +21,9 @@ result = https.request(req)
 supplied = 'http://www.thameswater.co.uk/your-account/605_5460.htm'
 not_supplied = 'http://www.thameswater.co.uk/your-account/605_5459.htm'
 
+# evaluates the post result
+if result.header['Location'] == supplied
+  puts 'Your property is in our supply area'
+elsif result.header['Location'] == not_supplied
+  puts 'Sorry, we cant find your postcode'
+end
