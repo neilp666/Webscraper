@@ -11,3 +11,13 @@ https = Net::HTTP.new(uri.host,uri.port)
 https.verify_mode = OpenSSL::SSL::VERIFY_NONE
 https.use_ssl = true
 
+# we need to define a Post object and send the postcode to search
+req = Net::HTTP::Post.new(uri.path)
+req.set_form_data('postcode1' => 'NW1W 9BE')
+
+# do the post
+result = https.request(req)
+
+supplied = 'http://www.thameswater.co.uk/your-account/605_5460.htm'
+not_supplied = 'http://www.thameswater.co.uk/your-account/605_5459.htm'
+
